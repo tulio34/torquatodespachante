@@ -22,7 +22,14 @@
       --wa:#25d366;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--black);-webkit-font-smoothing:antialiased}
+    body{
+      margin:0;
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--black);
+      -webkit-font-smoothing:antialiased;
+      overflow-x: hidden; /* **Ajuste para remover a barra de rolagem horizontal** */
+    }
     a{color:var(--gold)}
     header{background:linear-gradient(90deg,rgba(163,126,70,.06),rgba(0,0,0,0));border-bottom:1px solid rgba(163,126,70,.12)}
     .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px}
@@ -34,8 +41,8 @@
     .hero p{margin:0 0 14px;color:var(--gold);font-weight:700}
     .hero-right{height:300px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(163,126,70,.08),rgba(0,0,0,0.02))}
     .hero-right img{width:100%;height:100%;object-fit:cover}
-    .stats{max-width:1200px;margin:12px auto;display:flex;gap:12px;padding:0 18px}
-    .stat{flex:1;background:var(--card);padding:18px;border-radius:10px;border:1px solid rgba(163,126,70,.12);text-align:center}
+    .stats{max-width:1200px;margin:12px auto;display:flex;gap:12px;padding:0 18px;flex-wrap: wrap}
+    .stat{flex:1;background:var(--card);padding:18px;border-radius:10px;border:1px solid rgba(163,126,70,.12);text-align:center;min-width: 140px}
     .stat .num{font-weight:800;font-size:1.6rem;color:var(--gold)}
     .container{max-width:1200px;margin:18px auto;padding:0 18px}
     .section{background:var(--card);padding:20px;border-radius:12px;border:1px solid rgba(0,0,0,.04);margin-bottom:16px}
@@ -183,7 +190,7 @@
           </div>
         </div>
         <p class="muted" style="margin-top:10px">
-          <a href="https://www.google.com/maps/place/?q=place_id:ChIJuxOxeL8ZqwcRP_2jdjp-vGs" target="_blank">
+          <a href="https://www.google.com/maps/place/Torquato+Despachante/@-8.062024,-34.9392265,15z/data=!4m6!3m5!1s0x7ab188c1c45c363:0x1b1c640775d71457!8m2!3d-8.062024!4d-34.9392265!16s%2Fg%2F11t6s60x9p?entry=ttu" target="_blank">
             Leia todas as avaliações no Google
           </a>
         </p>
@@ -217,7 +224,7 @@
                 Falar com a gente
             </a>
         </p>
-        <p><a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Cosmo+Avelino+Ferreira,+122,+2º+Andar,+Iputinga+-+Recife+–+PE,+50690-585" target="_blank" style="text-decoration:none;font-weight:700">📍 Como chegar no Google Maps</a></p>
+        <p><a href="https://www.google.com/maps/place/Torquato+Despachante/@-8.062024,-34.9392265,15z/data=!4m6!3m5!1s0x7ab188c1c45c363:0x1b1c640775d71457!8m2!3d-8.062024!4d-34.9392265!16s%2Fg%2F11t6s60x9p?entry=ttu" target="_blank" style="text-decoration:none;font-weight:700">📍 Como chegar no Google Maps</a></p>
       </section>
     </div>
   </main>
