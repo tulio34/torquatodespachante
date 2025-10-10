@@ -158,11 +158,11 @@
                 position: relative;
                 width: 100%;
                 height: 0;
-                /* 16:9 Aspect Ratio */
-                padding-bottom: 56.25%; 
+                /* CORREÇÃO: Aumentado para 75% (proporção 4:3) para mais altura vertical */
+                padding-bottom: 75%; 
             }
             .video-container video {
-                /* CORREÇÃO: Altera para 'contain' para mostrar o vídeo inteiro sem cortar */
+                /* Garante que o vídeo inteiro seja visível, sem cortes */
                 object-fit: contain; 
             }
             .services-grid {
