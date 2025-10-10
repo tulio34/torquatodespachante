@@ -52,18 +52,11 @@
         .hero-primary p{margin:0 0 14px;color:var(--gold);font-weight:700}
         .hero-services{padding:24px;background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.06);}
         .hero-services h2{margin:0 0 12px; color:var(--gold)}
-        .hero-right{
-            grid-column: 2; 
-            /* REMOVIDO: border-radius:12px; overflow:hidden; */
-            background:linear-gradient(180deg,rgba(163,126,70,.08),rgba(0,0,0,0.02));
-        }
+        .hero-right{grid-column: 2; border-radius:12px;overflow:hidden;background:linear-gradient(180deg,rgba(163,126,70,.08),rgba(0,0,0,0.02));}
         .video-container {
             position: relative;
             width: 100%;
             height: 100%;
-            /* Adicionado/Mantido para arredondamento */
-            border-radius: 12px; 
-            overflow: hidden; 
         }
         .video-container video {
             position: absolute;
@@ -165,11 +158,11 @@
                 position: relative;
                 width: 100%;
                 height: 0;
-                /* AUMENTADO para 95% para deixar o vídeo maior */
-                padding-bottom: 95%; 
-                /* Garantido o arredondamento */
+                /* Aumentado para 85% para mais altura vertical */
+                padding-bottom: 85%; 
+                /* Arredondamento nas bordas do container do vídeo */
                 border-radius: 12px; 
-                overflow: hidden;
+                overflow: hidden; /* Garante que o vídeo também respeite o arredondamento */
             }
             .video-container video {
                 /* Mantido 'cover' para preencher o frame completamente */
