@@ -8,7 +8,7 @@
     <script>
         (function(w,d,s,l,i){w['dataLayer']=w['dataLayer']||[];w['dataLayer'].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:;j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-XXXXXXX');
     </script>
@@ -54,14 +54,12 @@
         .hero-services h2{margin:0 0 12px; color:var(--gold)}
         .hero-right{
             grid-column: 2; 
-            /* REMOVIDO: border-radius:12px; overflow:hidden; */
             background:linear-gradient(180deg,rgba(163,126,70,.08),rgba(0,0,0,0.02));
         }
         .video-container {
             position: relative;
             width: 100%;
             height: 100%;
-            /* Adicionado/Mantido para arredondamento */
             border-radius: 12px; 
             overflow: hidden; 
         }
@@ -165,9 +163,8 @@
                 position: relative;
                 width: 100%;
                 height: 0;
-                /* AUMENTADO para 95% para deixar o vídeo maior */
-                padding-bottom: 95%; 
-                /* Garantido o arredondamento */
+                /* AUMENTADO para 110% para o vídeo ficar bem maior no mobile */
+                padding-bottom: 110%; 
                 border-radius: 12px; 
                 overflow: hidden;
             }
