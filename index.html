@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Torquato Despachante — Regularize seu veículo</title>
     <meta name="description" content="Despachante em Recife: transferência, licenciamento, emplacamento, vistorias e mais. Atendimento rápido pelo WhatsApp." />
-    
     <script>
         (function(w,d,s,l,i){w['dataLayer']=w['dataLayer']||[];w['dataLayer'].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,7 +12,6 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-XXXXXXX');
     </script>
-    
     <style>
         :root{
             --bg:#f6f5f2;
@@ -35,39 +33,9 @@
         }
         a{color:var(--gold)}
         header{background:linear-gradient(90deg,rgba(163,126,70,.06),rgba(0,0,0,0));border-bottom:1px solid rgba(163,126,70,.12)}
-
-        /* Alinhamento do cabeçalho CENTRALIZADO */
-        .nav{
-            max-width:1200px;
-            margin:0 auto;
-            display:flex;
-            align-items:center;
-            justify-content:space-between; /* Empurra a logo pro centro e o botão pra ponta */
-            padding:14px
-        }
-        .nav img{
-            height:60px;
-            margin: 0 auto; /* Centraliza a logo no espaço disponível */
-        }
-
-        .btn-wa{
-            background:var(--wa);
-            color:#fff;
-            padding:10px 14px;
-            border-radius:40px;
-            text-decoration:none;
-            font-weight:700;
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-        }
-        /* Efeito de HOVER para os botões de WhatsApp */
-        .btn-wa:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); 
-        }
-
+        .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px}
+        .nav img{height:60px}
+        .btn-wa{background:var(--wa);color:#fff;padding:10px 14px;border-radius:40px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px}
         .hero{
             max-width:1200px;
             margin:26px auto 10px;
@@ -84,11 +52,16 @@
         .hero-primary p{margin:0 0 14px;color:var(--gold);font-weight:700}
         .hero-services{padding:24px;background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.06);}
         .hero-services h2{margin:0 0 12px; color:var(--gold)}
-        .hero-right{grid-column: 2; border-radius:12px;overflow:hidden;background:linear-gradient(180deg,rgba(163,126,70,.08),rgba(0,0,0,0.02));}
+        .hero-right{
+            grid-column: 2; 
+            background:linear-gradient(180deg,rgba(163,126,70,.08),rgba(0,0,0,0.02));
+        }
         .video-container {
             position: relative;
             width: 100%;
             height: 100%;
+            border-radius: 12px; 
+            overflow: hidden; 
         }
         .video-container video {
             position: absolute;
@@ -129,27 +102,29 @@
         .control{background:rgba(0,0,0,.06);border-radius:8px;padding:6px;cursor:pointer}
         .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
         .gallery img{width:100%;height:500px;object-fit:cover;border-radius:8px;border:1px solid rgba(163,126,70,.06); cursor: pointer}
+        .footer{max-width:1200px;margin:18px auto;padding:18px;color:var(--muted);font-size:.95rem}
+        .float-wa{position:fixed;right:18px;bottom:18px;z-index:50}
+        /* Ajuste para o botão flutuante para usar o ícone do WhatsApp */
+        .float-wa img {
+            display: none; /* Esconde a imagem do logo da empresa */
+        }
+        .float-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px; /* Tamanho do botão */
+            height: 64px; /* Tamanho do botão */
+            background-color: var(--wa); /* Cor do WhatsApp */
+            border-radius: 50%; /* Torna-o um círculo */
+            box-shadow: 0 8px 20px rgba(0,0,0,.12);
+            text-decoration: none;
+        }
+        .float-wa svg {
+            width: 36px; /* Tamanho do ícone SVG */
+            height: 36px; /* Tamanho do ícone SVG */
+            fill: #fff; /* Cor do ícone */
+        }
 
-        .footer{
-            max-width:1200px;
-            margin:18px auto;
-            padding:18px;
-            color:var(--muted);
-            font-size:.95rem;
-            text-align: center;
-        }
-        .float-wa{
-            position:fixed;
-            right:18px;
-            bottom:18px;
-            z-index:50;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        /* Efeito de HOVER para o botão flutuante */
-        .float-wa:hover {
-            transform: scale(1.1); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
 
         #lightbox {
             display: none;
@@ -176,7 +151,7 @@
             font-weight: bold;
             cursor: pointer;
         }
-
+        
         /* Botão Fixo Mobile */
         .btn-wa-mobile-footer {
             display: none;
@@ -210,14 +185,11 @@
                 position: relative;
                 width: 100%;
                 height: 0;
-                /* Aumentado para 85% para mais altura vertical */
-                padding-bottom: 85%; 
-                /* Arredondamento nas bordas do container do vídeo */
+                padding-bottom: 110%; /* AUMENTADO para 110% para o vídeo ficar bem maior no mobile */
                 border-radius: 12px; 
-                overflow: hidden; /* Garante que o vídeo também respeite o arredondamento */
+                overflow: hidden;
             }
             .video-container video {
-                /* Mantido 'cover' para preencher o frame completamente */
                 object-fit: cover; 
             }
             .services-grid {
@@ -243,11 +215,11 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
     <div class="nav">
-        <img src="assets/logo-horizontal-nova.png" alt="Torquato Despachante">
-        <a id="btn-wa-header" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&source=header" target="_blank">
+        <img src="assets/logo-horizontal-nova.png" alt="Torquato Despachante, especialista em regularização veicular em Recife">
+        <a id="btn-wa-header" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M20.52 3.48A11.75 11.75 0 0 0 3.48 20.52L2 22l1.5-1.22A11.75 11.75 0 0 0 20.52 3.48zM12 21a9 9 0 1 1 9-9 9 9 0 0 1-9 9z"/><path d="M17.6 14.5c-.3-.15-1.76-.86-2.04-.96-.28-.1-.48-.15-.69.1s-.8.96-.98 1.15c-.18.19-.35.21-.64.07a6.2 6.2 0 0 1-1.85-1.13 6.85 6.85 0 0 1-1.26-1.56c-.14-.23 0-.35.1-.47.1-.1.24-.27.34-.39.12-.12.14-.21.22-.36s.04-.28-.02-.39c-.06-.11-.56-1.3-.77-1.77-.2-.47-.4-.41-.54-.41h-.46c-.14 0-.36.05-.55.28s-.72.78-.72 1.9.75 1.95.86 2.09c.12.14 1.73 2.63 4.18 3.68.58.26 1.03.42 1.38.54.57.18 1.09.15 1.5.09.45-.07 1.38-.56 1.58-1.09.2-.53.2-.98.14-1.05-.06-.06-.29-.17-.6-.31z"/></svg>
             Falar no WhatsApp
         </a>
@@ -260,39 +232,34 @@
                 <h1>Regularize seu veículo sem burocracia</h1>
                 <p>Atendimento rápido, personalizado e seguro. A empresa melhor avaliada de Pernambuco</p>
                 <div style="display:flex;gap:8px">
-                    <a id="btn-wa-hero" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&source=hero" target="_blank">📲 Falar no WhatsApp</a>
+                    <a id="btn-wa-hero" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">📲 Falar no WhatsApp</a>
                 </div>
             </div>
             <div class="hero-services">
-                <h2>Serviços que oferecemos</h2>
+                <h2>Nossos Serviços de Despachante em Recife</h2>
                 <div class="services-grid">
-                    <div class="card"><h3>Gerenciamento de frotas</h3><p class="muted">Gestão completa de prazos, pendências e regularização documental para empresas.</p></div>
-                    <div class="card"><h3>Transferências de propriedade</h3><p class="muted">Apoio completo no processo de compra e venda de veículos, sem burocracia.</p></div>
-                    <div class="card"><h3>Encerramento de registros</h3><p class="muted">Orientação e suporte em processos de baixa de veículos de forma ágil.</p></div>
-                    <div class="card"><h3>Regularização de veículos </h3><p class="muted">Consultoria para adequar veículos às exigências legais com rapidez e segurança.</p></div>
-                    <div class="card"><h3>Pendências documentais</h3><p class="muted">Auxílio na resolução de problemas relacionados à documentação veicular.</p></div>
-                    <div class="card"><h3>Acompanhamento de vistorias</h3><p class="muted">Orientação e suporte para vistorias necessárias, de forma prática e descomplicada.</p></div>
+                    <div class="card"><h3>Gerenciamento de Frotas Empresariais</h3><p class="muted">Gestão completa de prazos, pendências e regularização documental para empresas.</p></div>
+                    <div class="card"><h3>Transferências de Propriedade de Veículos</h3><p class="muted">Apoio completo no processo de compra e venda de veículos, sem burocracia.</p></div>
+                    <div class="card"><h3>Encerramento de Registros Veiculares</h3><p class="muted">Orientação e suporte em processos de baixa de veículos de forma ágil.</p></div>
+                    <div class="card"><h3>Regularização de Veículos e Documentos</h3><p class="muted">Consultoria para adequar veículos às exigências legais com rapidez e segurança.</p></div>
+                    <div class="card"><h3>Resolução de Pendências Documentais</h3><p class="muted">Auxílio na resolução de problemas relacionados à documentação veicular.</p></div>
+                    <div class="card"><h3>Acompanhamento Profissional de Vistorias</h3><p class="muted">Orientação e suporte para vistorias necessárias, de forma prática e descomplicada.</p></div>
                 </div>
             </div>
         </div>
         <div class="hero-right">
             <div class="video-container">
-                <video controls autoplay muted loop playsinline>
+                <video controls autoplay muted loop playsinline preload="auto">
                     <source src="assets/video1.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
             </div>
         </div>
     </section>
-    <div class="stats">
-        <div class="stat"><div class="num" data-target="3200">0</div><div class="label">Clientes atendidos</div></div>
-        <div class="stat"><div class="num" data-target="5800">0</div><div class="label">Documentos emitidos</div></div>
-        <div class="stat"><div class="num" data-target="5.0" data-decimals="1">0</div><div class="label">Avaliação no Google ★</div></div>
-        <div class="stat"><div class="num" data-target="7">0</div><div class="label">Anos de experiência</div></div>
-    </div>
+
     <div class="container">
         <section class="section">
-            <h2>Comentários do Google</h2>
+            <h2>Depoimentos de Clientes Satisfeitos (Google)</h2>
             <div class="depo-carousel" id="reviews-carousel">
                 <div class="slides" id="slides">
                     <div class="slide">
@@ -321,24 +288,34 @@
             </div>
             <p class="muted" style="margin-top:10px">
                 <a href="https://g.page/r/CT_9o3Y6frxrEAE/review" target="_blank">
-                    Leia todas as avaliações no Google
+                    Leia todas as avaliações no Google da Torquato Despachante
                 </a>
             </p>
         </section>
+    </div>
+
+    <div class="stats">
+        <div class="stat"><div class="num" data-target="3200">0</div><div class="label">Clientes atendidos</div></div>
+        <div class="stat"><div class="num" data-target="5800">0</div><div class="label">Documentos emitidos</div></div>
+        <div class="stat"><div class="num" data-target="5.0" data-decimals="1">0</div><div class="label">Avaliação no Google ★</div></div>
+        <div class="stat"><div class="num" data-target="7">0</div><div class="label">Anos de experiência</div></div>
+    </div>
+    <div class="container">
+        
         <section class="section">
-            <h2>Nosso dia a dia</h2>
+            <h2>Nossa Equipe e Escritório em Recife</h2>
             <div class="gallery">
-                <img src="assets\team1.jpg" alt="Time Torquato" onclick="openLightbox(this)">
-                <img src="assets\office1.jpg" alt="Escritório" onclick="openLightbox(this)">
+                <img src="assets\team1.jpg" alt="Equipe Torquato Despachante em Recife, atendimento personalizado" onclick="openLightbox(this)">
+                <img src="assets\office1.jpg" alt="Escritório da Torquato Despachante em Iputinga, Recife" onclick="openLightbox(this)">
             </div>
         </section>
         <section class="section" style="text-align:center">
-            <h2>Fale conosco agora</h2>
+            <h2>Fale Conosco Agora e Regularize seu Veículo</h2>
             <p>Regularize seu veículo sem sair de casa. Atendimento imediato pelo WhatsApp.</p>
-            <a id="btn-wa-cta" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&source=cta" target="_blank">📲 Falar no WhatsApp</a>
+            <a id="btn-wa-cta" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">📲 Falar no WhatsApp</a>
         </section>
         <section class="section">
-            <h2>Contato</h2>
+            <h2>Localização e Contato Torquato Despachante</h2>
             <p><strong>Endereço:</strong> Rua Cosmo Avelino Ferreira, 122, 2º Andar, Iputinga - Recife – PE, 50690-585</p>
             <p><strong>Telefone/WhatsApp:</strong> (81) 4141-1306</p>
             <p><strong>Email:</strong> <a href="mailto:contato@torquatodespachante.com.br">contato@torquatodespachante.com.br</a></p>
@@ -346,7 +323,7 @@
             
             <p><a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Cosme+Avelino+Ferreira,+2%C2%BA+Andar+-+Iputinga,+Recife+-+PE,+50690-585" target="_blank" style="text-decoration:none;font-weight:700">📍 Como chegar no Google Maps</a></p>
             <p>
-                <a id="btn-wa-contact" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&source=contato" target="_blank">
+                <a id="btn-wa-contact" class="btn-wa conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M20.52 3.48A11.75 11.75 0 0 0 3.48 20.52L2 22l1.5-1.22A11.75 11.75 0 0 0 20.52 3.48zM12 21a9 9 0 1 1 9-9 9 9 0 0 1-9 9z"/><path d="M17.6 14.5c-.3-.15-1.76-.86-2.04-.96-.28-.1-.48-.15-.69.1s-.8.96-.98 1.15c-.18.19-.35.21-.64.07a6.2 6.2 0 0 1-1.85-1.13 6.85 6.85 0 0 1-1.26-1.56c-.14-.23 0-.35.1-.47.1-.1.24-.27.34-.39.12-.12.14-.21.22-.36s.04-.28-.02-.39c-.06-.11-.56-1.3-.77-1.77-.2-.47-.4-.41-.54-.41h-.46c-.14 0-.36.05-.55.28s-.72.78-.72 1.9.75 1.95.86 2.09c.12.14 1.73 2.63 4.18 3.68.58.26 1.03.42 1.38.54.57.18 1.09.15 1.5.09.45-.07 1.38-.56 1.58-1.09.2-.53.2-.98.14-1.05-.06-.06-.29-.17-.6-.31z"/></svg>
                     Falar com a gente
                 </a>
@@ -354,20 +331,19 @@
         </section>
     </div>
 </main>
-<a id="btn-wa-footer-mobile" class="btn-wa btn-wa-mobile-footer conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&source=mobile-footer" target="_blank">
+<a id="btn-wa-footer-mobile" class="btn-wa btn-wa-mobile-footer conversion-click" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">
     📲 Fale Conosco Agora!
 </a>
 <footer class="footer">
     © 2025 Torquato Despachante. Todos os direitos reservados.
 </footer>
-<a class="float-wa" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&source=float" target="_blank" aria-label="WhatsApp">
-    <img src="assets/logo-selo.png" alt="WhatsApp" style="width:64px;height:64px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.12)">
+<a class="float-wa" href="https://api.whatsapp.com/send?phone=558141411306&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" aria-label="Fale no WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C7.38 2 3.62 5.76 3.62 10.42c0 1.5.4 2.9.97 4.17l-1.4 5.14 5.23-1.37a8.4 8.4 0 0 0 4.5 1.25c4.66 0 8.42-3.76 8.42-8.42S16.7 2 12.04 2zm3.88 13.08s-.18-.3-.26-.46c-.08-.15-.44-.65-.65-.78-.2-.14-.46-.11-.64.12-.18.23-.74.96-.91 1.16-.17.2-.33.22-.61.08-.28-.15-1.16-.43-2.2-1.35-.85-.73-1.42-1.62-1.59-1.9-.17-.29-.02-.44.12-.58.11-.11.24-.26.37-.4.13-.15.17-.26.26-.42.08-.16.04-.3-.02-.42-.06-.11-.56-1.34-.77-1.84-.2-.5-.4-.4-.54-.42h-.47c-.13 0-.34.05-.53.28-.18.23-.72.71-.72 1.73s.74 2.01.85 2.15c.11.14 1.76 2.68 4.27 3.73.57.24 1.04.41 1.4.52.56.17 1.07.13 1.47.08.4-.05 1.2-.49 1.38-1.02.19-.53.19-.98.14-1.05-.06-.08-.2-.15-.4-.26z"/></svg>
 </a>
 <div id="lightbox" onclick="closeLightbox()">
     <span class="close-btn">×</span>
     <img class="lightbox-content" id="lightbox-img">
 </div>
-
 <script>
     // COUNTERS
     document.querySelectorAll('.num').forEach(el=>{
@@ -378,18 +354,13 @@
         const startTime=performance.now();
         function frame(now){
             const p=Math.min((now-startTime)/dur,1);
-            // Usamos uma curva de aceleração (ease-out cubic)
             const val = target * (1 - Math.pow(1-p,3));
-            
-            // Formatação de número para o Brasil
-            el.textContent = decimals? val.toFixed(decimals).replace('.', ','):Math.round(val).toLocaleString('pt-BR');
-            
+            el.textContent = decimals? val.toFixed(decimals):Math.round(val).toLocaleString('pt-BR');
             if(p<1) requestAnimationFrame(frame);
         }
         requestAnimationFrame(frame);
     });
-
-    // CAROUSEL LOGIC
+    // Simple carousel logic
     let current=0;
     function showSlide(i){
         const slides=document.getElementById('slides');
@@ -400,11 +371,8 @@
     }
     document.getElementById('prev').addEventListener('click',()=>showSlide(current-1));
     document.getElementById('next').addEventListener('click',()=>showSlide(current+1));
-
-    // Troca automática a cada 6 segundos
-    setInterval(()=>showSlide(current+1),6000); 
-
-    // LIGHTBOX (Galeria de Imagens)
+    setInterval(()=>showSlide(current+1),6000);
+    // Lightbox para a galeria
     function openLightbox(img) {
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-img");
@@ -415,10 +383,6 @@
         const lightbox = document.getElementById("lightbox");
         lightbox.style.display = "none";
     }
-
-    // Exporta as funções para que o HTML consiga acessá-las (necessário no HTML)
-    window.openLightbox = openLightbox;
-    window.closeLightbox = closeLightbox;
 </script>
 </body>
 </html>
